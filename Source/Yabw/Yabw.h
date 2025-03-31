@@ -4,7 +4,7 @@
 
 #include "Modules/ModuleManager.h"
 
-class FYabwModule : public IModuleInterface
+class FYabwModule final : public IModuleInterface
 {
 public:
 
