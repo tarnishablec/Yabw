@@ -6,6 +6,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "YabwFunctionLibrary.generated.h"
 
+class UGameplayCameraComponent;
 class AGameplayCameraSystemActor;
 
 /**

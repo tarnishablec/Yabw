@@ -10,7 +10,7 @@
 void UYabwFunctionLibrary::GetEvaluatedCameraView(AGameplayCameraSystemActor* CameraSystemActor,
                                                   FMinimalViewInfo& DesiredView)
 {
-    // Cause AGameplayCameraSystemActor::GetAutoSpawnedCameraSystemActor is Not Exported , We Need Pass CameraSystemActor as Parameter
+    // Cause AGameplayCameraSystemActor::GetAutoSpawnedCameraSystemActor is Not Exported , We Need to Pass CameraSystemActor as Parameter
     // const auto CameraSystemActor = AGameplayCameraSystemActor::GetAutoSpawnedCameraSystemActor(PlayerController);
 
     if (!CameraSystemActor)
@@ -31,3 +31,4 @@ void UYabwFunctionLibrary::GetEvaluatedCameraView(AGameplayCameraSystemActor* Ca
         Evaluator.Get()->GetEvaluatedCameraView(DesiredView);
     }
 }
+
