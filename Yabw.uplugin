@@ -21,6 +21,10 @@
     }
   ],
   "Plugins": [
-    
+    {
+      "Name": "GameplayCameras",
+      "Enabled": true,
+      "Optional": false
+    }
   ]
 }
