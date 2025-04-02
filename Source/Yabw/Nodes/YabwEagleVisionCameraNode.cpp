@@ -6,6 +6,7 @@
 #include "Core/CameraEvaluationContext.h"
 #include "Core/CameraParameterReader.h"
 #include "Core/CameraSystemEvaluator.h"
+#include "Kismet/KismetMathLibrary.h"
 
 namespace Yabw
 {
@@ -32,7 +33,6 @@ namespace Yabw
         float TargetArmRatio = 0.f;
         float CurrentArmRatio = 0.f;
 
-        FTransform RootTransform;
         FTransform RootOffset;
         FTransform LookAtOffset;
     };
@@ -109,7 +109,7 @@ namespace Yabw
             ))
         );
 
-        RootTransform = RootOffset * PawnTransform;
+        const auto RootTransform = RootOffset * PawnTransform;
 
         TargetArmRatio = FMath::Clamp(TargetArmRatio + ZoomInput * 0.1, 0, 1);
         CurrentArmRatio = FMath::FInterpTo(CurrentArmRatio, TargetArmRatio, DeltaTime, ZoomScale * 5);
@@ -117,7 +117,8 @@ namespace Yabw
         const auto CurrentArmLength = FMath::GetMappedRangeValueClamped(FVector2f(1, 0), ArmLengthClamp,
                                                                         CurrentArmRatio);
 
-        const auto CameraTransform = FTransform(FVector(-1 * CurrentArmLength, 0, 0)) * (LookAtOffset * RootTransform);
+        const auto CameraTransform = FTransform(FVector(-1 * CurrentArmLength, 0, 0)) * (UKismetMathLibrary::TEase(
+            LookAtOffset, FTransform::Identity, CurrentArmRatio, EEasingFunc::Linear) * RootTransform);
 
         CameraPose.SetLocation(CameraTransform.GetLocation());
         CameraPose.SetRotation(CameraTransform.GetRotation().Rotator());
