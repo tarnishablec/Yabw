@@ -105,7 +105,7 @@ namespace Yabw
                     PitchAngleClamp.GetMax()
                 ),
                 PreLookAtRotator.Yaw,
-                PreRootRotator.Roll
+                PreLookAtRotator.Roll
             ))
         );
 
