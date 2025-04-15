@@ -1,13 +1,13 @@
 ﻿// Copyright 2019-Present tarnishablec. All Rights Reserved.
 
 
-#include "YabwFunctionLibrary.h"
+#include "YabwCameraLibrary.h"
 
 #include "Core/CameraSystemEvaluator.h"
 #include "GameFramework/GameplayCameraSystemActor.h"
 #include "GameFramework/GameplayCameraSystemComponent.h"
 
-void UYabwFunctionLibrary::GetEvaluatedCameraView(AGameplayCameraSystemActor* CameraSystemActor,
+void UYabwCameraLibrary::GetEvaluatedCameraView(AGameplayCameraSystemActor* CameraSystemActor,
                                                   FMinimalViewInfo& DesiredView)
 {
     // Cause AGameplayCameraSystemActor::GetAutoSpawnedCameraSystemActor is Not Exported , We Need to Pass CameraSystemActor as Parameter

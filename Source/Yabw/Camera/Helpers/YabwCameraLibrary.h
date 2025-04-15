@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "YabwFunctionLibrary.generated.h"
+#include "YabwCameraLibrary.generated.h"
 
 class UGameplayCameraComponent;
 class AGameplayCameraSystemActor;
@@ -13,7 +13,7 @@ class AGameplayCameraSystemActor;
  * 
  */
 UCLASS()
-class YABW_API UYabwFunctionLibrary : public UBlueprintFunctionLibrary
+class YABW_API UYabwCameraLibrary : public UBlueprintFunctionLibrary
 {
     GENERATED_BODY()
 
