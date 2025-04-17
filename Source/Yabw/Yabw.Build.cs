@@ -29,6 +29,9 @@ public class Yabw : ModuleRules
 			{
 				"Core",
 				// ... add other public dependencies that you statically link with here ...
+				"GameplayCameras",
+				"EnhancedInput",
+				"Wynaut"
 			}
 		);
 
@@ -40,7 +43,6 @@ public class Yabw : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
-				"GameplayCameras",
 				// ... add private dependencies that you statically link with here ...	
 			}
 		);

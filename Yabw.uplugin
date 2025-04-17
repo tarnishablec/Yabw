@@ -25,6 +25,11 @@
       "Name": "GameplayCameras",
       "Enabled": true,
       "Optional": false
+    },
+    {
+      "Name": "Wynaut",
+      "Enabled": true,
+      "Optional": false
     }
   ]
 }
